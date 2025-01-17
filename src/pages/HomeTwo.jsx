@@ -20,62 +20,15 @@ const Container = styled.div`
   width: 100%;
   overflow: hidden;
 `;
-
-// const WorksSection = styled.div`
-//   background-color: rgba(220, 237, 200, 0.3);
-//   padding: 60px 0;
-//   border-radius: 300px 300px 0 0;
-//   margin-top: 40px;
-// `;
-
 const WorksTitle = styled.h2`
   text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 50px;
 `;
-
-// const WorksContent = styled.div`
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   padding: 0 20px;
-//   display: flex;
-//   gap: 40px;
-// `;
-
 const Column = styled.div`
   flex: 1;
 `;
-
-// const CategoryTitle = styled.h3`
-//   background-color: #1a1a1a;
-//   color: white;
-//   padding: 12px 30px;
-//   border-radius: 30px;
-//   text-align: center;
-//   margin-bottom: 30px;
-//   font-weight: 500;
-// `;
-
-const StepCard = styled.div`
-  background: white;
-  border-radius: 15px;
-  padding: 30px;
-  margin-bottom: 20px;
-  text-align: center;
-`;
-
-// const StepImage = styled.img`
-//   width: 100px;
-//   height: 100px;
-//   margin-bottom: 15px;
-// `;
-
-// const StepTitle = styled.h4`
-//   font-size: 1.1rem;
-//   color: #333;
-//   margin: 10px 0;
-// `;
 
 const ImpactSection = styled.div`
   background-image: url(${transformingagriculturebackground});
@@ -158,86 +111,6 @@ const StatValue = styled.span`
   font-weight: bold;
   color: #4CAF50;
 `;
-// const SliderContainer = styled.div`
-//   position: relative;
-//   width: 100%;
-//   max-width: 400px;
-//   margin: 0 auto;
-// `;
-
-// const Slide = styled.div`
-//   background: white;
-//   border-radius: 15px;
-//   padding: 40px;
-//   text-align: center;
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//   margin: 0 auto;
-//   width: 100%;
-// `;
-
-// const StepNumber = styled.div`
-//   font-size: 0.9rem;
-//   color: #666;
-//   margin-bottom: 10px;
-// `;
-
-// const NavigationButton = styled.button`
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: rgba(0, 0, 0, 0.5);
-//   color: white;
-//   border: none;
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   cursor: pointer;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   transition: background 0.3s ease;
-
-//   &:hover {
-//     background: rgba(0, 0, 0, 0.7);
-//   }
-
-//   &.prev {
-//     left: -20px;
-//   }
-
-//   &.next {
-//     right: -20px;
-//   }
-// `;
-
-// const StepIndicators = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   gap: 8px;
-//   margin-top: 20px;
-// `;
-
-// const StepDot = styled.div`
-//   width: 8px;
-//   height: 8px;
-//   border-radius: 50%;
-//   background: ${props => props.active ? '#4CAF50' : '#ddd'};
-//   transition: background 0.3s ease;
-//   cursor: pointer;
-// `;
-
-// const WorksContent = styled.div`
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   padding: 0 20px;
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   gap: 40px;
-
-//   @media (max-width: 768px) {
-//     grid-template-columns: 1fr;
-//   }
-// `;
 const WorksSection = styled.div`
   background-color: rgba(220, 237, 200, 0.3);
   padding: 80px 0;
@@ -252,78 +125,6 @@ const SliderContainer = styled.div`
   max-width: 500px;
   margin: 0 auto;
 `;
-
-// const Slide = styled.div`
-//   background: white;
-//   border-radius: 20px;
-//   padding: 30px;
-//   text-align: center;
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-//   position: relative;
-//   height: 400px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `;
-
-// const StepNumber = styled.div`
-//   font-size: 1.1rem;
-//   color: #333;
-//   margin-bottom: 20px;
-//   position: absolute;
-//   top: 30px;
-// `;
-
-// const StepImage = styled.img`
-//   width: 200px;
-//   height: 200px;
-//   margin: 60px 0 30px;
-//   object-fit: contain;
-// `;
-
-// const StepTitle = styled.h4`
-//   font-size: 1.5rem;
-//   color: #333;
-//   margin-bottom: 20px;
-//   font-weight: 500;
-// `;
-
-// const NavigationButton = styled.button`
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   background: rgba(0, 0, 0, 0.1);
-//   color: #333;
-//   border: none;
-//   width: 50px;
-//   height: 50px;
-//   border-radius: 50%;
-//   cursor: pointer;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   transition: all 0.3s ease;
-//   z-index: 2;
-
-//   &:hover {
-//     background: rgba(0, 0, 0, 0.2);
-//   }
-
-//   &.prev {
-//     left: -25px;
-//   }
-
-//   &.next {
-//     right: -25px;
-//   }
-
-//   svg {
-//     width: 24px;
-//     height: 24px;
-//     stroke-width: 2;
-//   }
-// `;
-
 const StepIndicators = styled.div`
   display: flex;
   justify-content: center;

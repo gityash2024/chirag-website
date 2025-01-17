@@ -18,6 +18,9 @@ import vendor from "../assets/vendor.png";
 import prices from "../assets/prices.png";
 import filedtested from "../assets/filedtested.png";
 import effortless from "../assets/effortless.png";
+import HomeTwo from "../pages/HomeTwo";
+import HomeThree from "../pages/HomeThree";
+import HomeFour from "../pages/HomeFour";
 
 const Container = styled.div`
   width: 100%;
@@ -353,6 +356,12 @@ const Home = () => {
           </FeaturesGrid>
         </DroneServiceSection>
       </FeaturesSection>
+
+      <HomeTwo />
+
+      <HomeThree />
+
+      <HomeFour />
     </Container>
   );
 };
