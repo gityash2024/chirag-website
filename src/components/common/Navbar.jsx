@@ -1,28 +1,47 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { X, Circle } from 'lucide-react';
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const VerticalNavbar = ({
+  menuItems = [
+    { label: "Home", href: "/", icon: Circle },
+    { label: "Product", href: "/product" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" }
+  ]
+}) => {
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
-              <img className="h-8 w-auto" src="/images/logo.png" alt="CHIRAG CONNECT" />
-            </Link>
-          </div>
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-green-600">Home</Link>
-            <Link to="/services" className="text-gray-700 hover:text-green-600">Services</Link>
-            <Link to="/about" className="text-gray-700 hover:text-green-600">About</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-green-600">Contact</Link>
-          </div>
-        </div>
+    <div className="fixed right-8 top-8 flex flex-col bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg z-50 max-h-[calc(100vh-4rem)]">
+      {/* Logo */}
+      <div className="flex items-center gap-2 mb-6">
+        <X className="w-5 h-5" />
+        <span className="font-semibold text-gray-800">CHIRAG</span>
+        <span className="text-sm text-gray-500">CONNECT</span>
       </div>
-    </nav>
+
+      {/* Navigation Links */}
+      <nav className="flex flex-col space-y-4 mb-6">
+        {menuItems.map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
+            className={`flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors ${
+              index === 0 ? 'font-medium' : ''
+            }`}
+          >
+            {index === 0 && <Circle size={16} className="fill-current" />}
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Grid of Plus Signs */}
+      <div className="grid grid-cols-6 gap-2">
+        {Array(60).fill(null).map((_, i) => (
+          <span key={i} className="text-gray-300 text-xs select-none">+</span>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default Navbar;
+export default VerticalNavbar;
