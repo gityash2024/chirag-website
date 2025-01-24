@@ -8,6 +8,8 @@ import HomeTwo from "./pages/HomeTwo";
 import HomeThree from "./pages/HomeThree";
 import HomeFour from "./pages/HomeFour";
 import OurSerivce from "./pages/OurSerivce";
+import AboutTwo from "./pages/AboutTwo";
+import OurSerivceTwo from "./pages/OurSerivceTwo";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -45,7 +47,14 @@ export const router = createBrowserRouter([
         path: "/ourservice",
         element: <OurSerivce />,
       },
-     
+      {
+        path: "/ourservicetwo",
+        element: <OurSerivceTwo />,
+      },
+      {
+        path: "abouttwo",
+        element: <AboutTwo />,
+      },
     ],
   },
 ]);

@@ -13,6 +13,8 @@ import tailored_1 from "../assets/tailored_1.png";
 import tailored_2 from "../assets/tailored_2.png";
 import tailored_3 from "../assets/tailored_3.png";
 import ourservice from "../assets/ourservices.png";
+import OurSerivceTwo from "../pages/OurSerivceTwo";
+
 
 const Container = styled.div`
   width: 100%;
@@ -603,6 +605,8 @@ const OurService = () => {
           <img src={ourservice} alt="Hero" style={{ visibility: "hidden" }} />
         </ImageContainer>
       </HeroSections>
+
+      < OurSerivceTwo/>
     </Container>
   );
 };

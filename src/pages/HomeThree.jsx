@@ -4,12 +4,15 @@ import exploredronebackground from "../assets/exploredronebackground.png";
 import exploredrone_1 from "../assets/exploredrone_1.png";
 import exploredrone_2 from "../assets/exploredrone_2.png";
 import exploredrone_3 from "../assets/exploredrone_3.png";
-import compreshensive_1 from "../assets/compreshensive_1.png";
-import compreshensive_2 from "../assets/compreshensive_2.png";
-import compreshensive_3 from "../assets/compreshensive_3.png";
-import compreshensive_4 from "../assets/compreshensive_4.png";
-import compreshensive_5 from "../assets/compreshensive_5.png";
-import compreshensive_6 from "../assets/compreshensive_6.png";
+import exploredrone_4 from "../assets/exploredrone_4.png";
+import exploredrone_5 from "../assets/exploredrone_5.png";
+import exploredrone_6 from "../assets/exploredrone_6.png";
+import compreshensive_1 from "../assets/compreshensive_1.svg";
+import compreshensive_2 from "../assets/compreshensive_2.svg";
+import compreshensive_3 from "../assets/compreshensive_3.svg";
+import compreshensive_4 from "../assets/compreshensive_4.svg";
+import compreshensive_5 from "../assets/compreshensive_5.svg";
+import compreshensive_6 from "../assets/compreshensive_6.svg";
 import testimonial_1 from "../assets/testimonial_1.png";
 import testimonial_2 from "../assets/testimonial_2.png";
 import testimonial_3 from "../assets/testimonial_3.png";
@@ -195,6 +198,33 @@ const HomeThree = () => {
         "Payload:10L-20L for high-altitude and dense orchards",
         "ULV Spraying Technology: Ultra-low volume spraying for precision",
         "Specialized Sensors: Detect canopy gaps and optimize coverage"
+      ]
+    },
+    {
+      title: "Monitoring, Mapping, and Surveying Drones",
+      image: exploredrone_4,
+      features: [
+        "Multispectral and LIDAR Surveying Drones",
+        "Provide data for vegetation health and topographic mapping",
+        "RTK-GPS Modules : Ensure precision in mapping"
+      ]
+    },
+    {
+      title: "Seeding and Fertilizer Drones",
+      image: exploredrone_5,
+      features: [
+        "Payload:10L-25L for uniform coverage.",
+        "Circular Rotating Sprayer Module : Ensure even distribution over large areas.",
+        "Multi-Crop Compatibility : Suitable for crops like mustard, wheat, maize, and pulses."
+      ]
+    },
+    {
+      title: "Precision Spraying Drones",
+      image: exploredrone_6,
+      features: [
+        "Payload: 5L–15L, suitable for medium-scale precision tasks.",
+       "Advanced Nozzles: Adjustable spray patterns based on crop type.",
+        "AI-Powered Navigation: Ideal for vineyards, tea gardens, and floriculture."
       ]
     }
   ];

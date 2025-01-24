@@ -17,6 +17,9 @@ import chiragtechnologies from "../assets/chiragtechnologies.png";
 import nextchirag from "../assets/nextchirag.png";
 import  recognition_1 from "../assets/recognition_1.png";
 import recognition_2 from "../assets/recognition_2.png";
+import AboutTwo from "../pages/AboutTwo";
+
+
 
 const HeroSection = styled.section`
   position: relative;
@@ -495,7 +498,11 @@ const HeroWithSlider = () => {
           </SliderButton>
         </SliderContainer>
 
+
       </TransformSection>
+
+      < AboutTwo/>
+
     </>
   );
 };
