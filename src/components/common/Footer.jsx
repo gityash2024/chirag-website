@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import chirag_logo from "../../assets/chirag_logo.svg";
 import Playstores from "../../assets/Playstores.png";
 import { Facebook, Twitter, Instagram, Linkedin, X } from 'lucide-react';
+import facebook from "../../assets/facebook.svg";
+import insta from "../../assets/insta.svg";
+import twitter from "../../assets/twitter.svg";
+import linkedin from "../../assets/linkedin.svg";
+import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
   background: #E1F0D1;
@@ -27,16 +33,11 @@ const LogoSection = styled.div`
   margin-bottom: 1rem;
 `;
 
-const BrandText = styled.div`
-  h2 {
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-  p {
-    font-size: 0.9rem;
-  }
+const LogoImage = styled.img`
+  height: 50px;
+  width: auto;
+  padding-right: 35px;
 `;
-
 const FooterSection = styled.div`
   h3 {
     font-weight: 600;
@@ -108,7 +109,17 @@ const FooterBottom = styled.div`
     text-align: center;
   }
 `;
-
+const SocialIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+`;
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -118,20 +129,19 @@ const Footer = () => {
         <FooterContent>
           <FooterSection>
             <LogoSection>
-              <X size={24} />
-              <BrandText>
-                <h2>C.H.I.R.A.G.</h2>
-                <p>CONNECT</p>
-              </BrandText>
+              <LogoSection>
+             <X size={24} />
+                <LogoImage src={chirag_logo} alt="CHIRAG CONNECT" />
+              </LogoSection>
             </LogoSection>
           </FooterSection>
 
           <FooterSection>
             <h3>Company</h3>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href=" /terms">Terms & Conditions</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
               <li><a href="#">CC Impact</a></li>
               <li><a href="#">Careers</a></li>
             </ul>
@@ -142,7 +152,7 @@ const Footer = () => {
             <ul>
               <li><a href="#">CC Testimonials</a></li>
               <li><a href="#">Download Farmer App</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
             </ul>
           </FooterSection>
 
@@ -156,11 +166,11 @@ const Footer = () => {
           <SocialSection>
             <h3>Social Links</h3>
             <div className="social-icons">
-              <Facebook className="social-icon" size={20} />
-              <Instagram className="social-icon" size={20} />
-              <Linkedin className="social-icon" size={20} />
-              <Twitter className="social-icon" size={20} />
-            </div>
+  <SocialIcon src={facebook} alt="Facebook" />
+  <SocialIcon src={insta} alt="Instagram" />
+  <SocialIcon src={linkedin} alt="LinkedIn" />
+  <SocialIcon src={twitter} alt="Twitter" />
+</div>
             <a href="#" className="playstore-button">
               <img src={Playstores} alt="Get it on Google Play" />
             </a>

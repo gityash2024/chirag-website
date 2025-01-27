@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import chiragbackgroundimage from "../assets/chiragbackgroundimage.png";
+import serviceimage from "../assets/serviceimage.png";
 import exploringchiragconnection_1 from "../assets/exploringchiragconnection_1.png";
 import exploringchiragconnection_2 from "../assets/exploringchiragconnection_2.png";
 import tractor from "../assets/tractor.svg";
@@ -24,7 +24,7 @@ const Container = styled.div`
 const HeroSection = styled.div`
   position: relative;
   min-height: 100vh;
-  background-image: url(${chiragbackgroundimage});
+  background-image: url(${serviceimage});
   background-size: cover;
   background-position: center;
   padding: 2rem;

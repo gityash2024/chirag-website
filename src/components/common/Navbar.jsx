@@ -1,46 +1,99 @@
 import React from 'react';
-import { X, Circle } from 'lucide-react';
+import styled from 'styled-components';
+import chirag_logo from "../../assets/chirag_logo.svg";
+import { Circle } from 'lucide-react';
 
-const VerticalNavbar = ({
+const NavbarContainer = styled.div`
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  max-height: calc(100vh - 4rem);
+`;
+
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+`;
+
+const Logo = styled.img`
+  height: 32px;
+  width: auto;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+`;
+
+const NavLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4B5563;
+  transition: color 0.2s;
+  font-size: 0.95rem;
+  
+  &:hover {
+    color: #111827;
+  }
+  
+  &:first-child {
+    font-weight: 500;
+  }
+`;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+`;
+
+const GridItem = styled.span`
+  color: #D1D5DB;
+  font-size: 0.75rem;
+  user-select: none;
+`;
+
+const VerticalNavbar = ({ 
   menuItems = [
-    { label: "Home", href: "/", icon: Circle },
-    { label: "Product", href: "/product" },
+    { label: "Home", href: "/", },
+    { label: "Product", href: "/ourservice" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" }
   ]
 }) => {
   return (
-    <div className="fixed right-8 top-8 flex flex-col bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg z-50 max-h-[calc(100vh-4rem)]">
-      {/* Logo */}
-      <div className="flex items-center gap-2 mb-6">
-        <X className="w-5 h-5" />
-        <span className="font-semibold text-gray-800">CHIRAG</span>
-        <span className="text-sm text-gray-500">CONNECT</span>
-      </div>
-
-      {/* Navigation Links */}
-      <nav className="flex flex-col space-y-4 mb-6">
+    <NavbarContainer>
+      <LogoWrapper>
+        <Logo src={chirag_logo} alt="CHIRAG CONNECT" />
+      </LogoWrapper>
+      
+      <Nav>
         {menuItems.map((item, index) => (
-          <a
-            key={index}
-            href={item.href}
-            className={`flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors ${
-              index === 0 ? 'font-medium' : ''
-            }`}
-          >
+          <NavLink key={index} href={item.href}>
             {index === 0 && <Circle size={16} className="fill-current" />}
             {item.label}
-          </a>
+          </NavLink>
         ))}
-      </nav>
+      </Nav>
 
-      {/* Grid of Plus Signs */}
-      <div className="grid grid-cols-6 gap-2">
+      <GridContainer>
         {Array(60).fill(null).map((_, i) => (
-          <span key={i} className="text-gray-300 text-xs select-none">+</span>
+          <GridItem key={i}>+</GridItem>
         ))}
-      </div>
-    </div>
+      </GridContainer>
+    </NavbarContainer>
   );
 };
 

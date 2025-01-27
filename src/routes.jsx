@@ -10,6 +10,8 @@ import HomeFour from "./pages/HomeFour";
 import OurSerivce from "./pages/OurSerivce";
 import AboutTwo from "./pages/AboutTwo";
 import OurSerivceTwo from "./pages/OurSerivceTwo";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermandCondition from "./pages/TermandCondition";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -50,6 +52,14 @@ export const router = createBrowserRouter([
       {
         path: "/ourservicetwo",
         element: <OurSerivceTwo />,
+      },
+      {
+        path: "/privacy",
+        element: <PrivacyPage />,
+      },
+      {
+        path: "/terms",
+        element: <TermandCondition />,
       },
       {
         path: "abouttwo",

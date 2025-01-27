@@ -341,7 +341,7 @@ const Home = () => {
         </AdditionalFeaturesGrid>
 
         <DroneServiceSection>
-          <SectionTitle>For Drone Service Providers</SectionTitle>
+          <SectionTitle>For Drone Service <br /> Providers</SectionTitle>
           <FeaturesGrid>
             <DroneImage src={drop} alt="Drone Service" />
             {droneFeatures.map((feature, index) => (

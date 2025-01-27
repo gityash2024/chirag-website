@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import chiragbackgroundimage from "../assets/chiragbackgroundimage.png";
+import aboutusimage from "../assets/aboutusimage.png";
 import acres_1 from "../assets/acres_1.png";
 import acres_2 from "../assets/acres_2.png";
 import acres_3 from "../assets/acres_3.png";
@@ -34,7 +34,7 @@ const BackgroundImage = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(${chiragbackgroundimage});
+  background-image: url(${aboutusimage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
