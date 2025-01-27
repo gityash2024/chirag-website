@@ -7,7 +7,7 @@ import facebook from "../../assets/facebook.svg";
 import insta from "../../assets/insta.svg";
 import twitter from "../../assets/twitter.svg";
 import linkedin from "../../assets/linkedin.svg";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
   background: #E1F0D1;
@@ -122,7 +122,7 @@ const SocialIcon = styled.img`
 `;
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
+  const navigate = useNavigate();
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -139,27 +139,27 @@ const Footer = () => {
           <FooterSection>
             <h3>Company</h3>
             <ul>
-              <li><a href="/about">About Us</a></li>
-              <li><a href=" /terms">Terms & Conditions</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="#">CC Impact</a></li>
-              <li><a href="#">Careers</a></li>
+              <li><a onClick={() => navigate("/about")}>About Us</a></li>
+              <li><a onClick={() => navigate("/terms")}>Terms & Conditions</a></li>
+              <li><a onClick={() => navigate("/privacy")}>Privacy Policy</a></li>
+              <li><a onClick={() => navigate("/")}>CC Impact</a></li>
+              <li><a onClick={() => navigate("/")}>Careers</a></li>
             </ul>
           </FooterSection>
 
           <FooterSection>
             <h3>For Farmers</h3>
             <ul>
-              <li><a href="#">CC Testimonials</a></li>
-              <li><a href="#">Download Farmer App</a></li>
-              <li><a href="/contact">Contact Us</a></li>
+              <li><a onClick={() => navigate("/")}>CC Testimonials</a></li>
+              <li><a onClick={() => navigate("/")}>Download Farmer App</a></li>
+              <li><a onClick={() => navigate("/contact")}>Contact Us</a></li>
             </ul>
           </FooterSection>
 
           <FooterSection>
             <h3>For Vendors</h3>
             <ul>
-              <li><a href="#">Register as CC Vendor</a></li>
+              <li><a onClick={() => navigate("/")}>Register as CC Vendor</a></li>
             </ul>
           </FooterSection>
 
@@ -171,7 +171,7 @@ const Footer = () => {
   <SocialIcon src={linkedin} alt="LinkedIn" />
   <SocialIcon src={twitter} alt="Twitter" />
 </div>
-            <a href="#" className="playstore-button">
+            <a onClick={() => navigate("/")} className="playstore-button">
               <img src={Playstores} alt="Get it on Google Play" />
             </a>
           </SocialSection>

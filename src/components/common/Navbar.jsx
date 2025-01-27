@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import chirag_logo from "../../assets/chirag_logo.svg";
 import { Circle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const NavbarContainer = styled.div`
   position: fixed;
@@ -73,6 +74,7 @@ const VerticalNavbar = ({
     { label: "Contact", href: "/contact" }
   ]
 }) => {
+  const navigate = useNavigate();
   return (
     <NavbarContainer>
       <LogoWrapper>
@@ -81,7 +83,7 @@ const VerticalNavbar = ({
       
       <Nav>
         {menuItems.map((item, index) => (
-          <NavLink key={index} href={item.href}>
+          <NavLink key={index} onClick={()=>{navigate(item.href)}}>
             {index === 0 && <Circle size={16} className="fill-current" />}
             {item.label}
           </NavLink>

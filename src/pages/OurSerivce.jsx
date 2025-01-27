@@ -14,6 +14,7 @@ import tailored_2 from "../assets/tailored_2.png";
 import tailored_3 from "../assets/tailored_3.png";
 import ourservice from "../assets/ourservices.png";
 import OurSerivceTwo from "../pages/OurSerivceTwo";
+import { useNavigate } from "react-router-dom";
 
 
 const Container = styled.div`
@@ -363,6 +364,7 @@ const ImageContainer = styled.div`
 `;
 
 const OurService = () => {
+  const navigate=useNavigate();
   const [activeTab, setActiveTab] = useState("farmers");
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -578,7 +580,7 @@ const OurService = () => {
                   ))}
                 </FeatureList>
                 <ActionButton
-                  href="#"
+                 onClick={() => navigate("/")}
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.98 }}
                 >
