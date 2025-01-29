@@ -21,6 +21,7 @@ import effortless from "../assets/effortless.png";
 import HomeTwo from "../pages/HomeTwo";
 import HomeThree from "../pages/HomeThree";
 import HomeFour from "../pages/HomeFour";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -214,6 +215,7 @@ const DroneImage = styled.img`
 `;
 
 const Home = () => {
+  const navigate=useNavigate();
   const stats = [
     { value: "25%", label: "Increase in crop yield" },
     { value: "1000+", label: "successful service bookings completed" },
@@ -293,7 +295,7 @@ const Home = () => {
             <br />
             Connecting Farmers, Vendors, and Solutions Seamlessly.
           </Subtitle>
-          <ContactButton>
+          <ContactButton onClick={() => navigate("/contact")}>
             Contact Us Now
             <ArrowIcon>→</ArrowIcon>
           </ContactButton>

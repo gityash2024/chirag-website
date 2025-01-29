@@ -83,7 +83,7 @@ const VerticalNavbar = ({
       
       <Nav>
         {menuItems.map((item, index) => (
-          <NavLink key={index} onClick={()=>{navigate(item.href)}}>
+          <NavLink style={{ cursor: "pointer" }} key={index} onClick={()=>{navigate(item.href)}}>
             {index === 0 && <Circle size={16} className="fill-current" />}
             {item.label}
           </NavLink>

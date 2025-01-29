@@ -25,18 +25,18 @@ const WorksTitle = styled.h2`
   font-size: 2rem;
   color: #333;
   margin-bottom: 50px;
+  font-weight: bold;
 `;
 const Column = styled.div`
   flex: 1;
 `;
-
 const ImpactSection = styled.div`
   background-image: url(${transformingagriculturebackground});
   background-size: cover;
   background-position: center;
   padding: 60px 0;
   position: relative;
-
+  
   &::before {
     content: '';
     position: absolute;
@@ -44,12 +44,12 @@ const ImpactSection = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.92));
   }
 `;
 
 const ImpactContent = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
@@ -58,9 +58,10 @@ const ImpactContent = styled.div`
 
 const ImpactTitle = styled.h2`
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
   margin-bottom: 15px;
+  font-weight: bold;
 `;
 
 const ImpactSubtitle = styled.p`
@@ -70,47 +71,171 @@ const ImpactSubtitle = styled.p`
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
 `;
 
 const StatsCard = styled.div`
-  background: ${props => `rgba(76, 175, 80, ${0.1 + props.index * 0.05})`};
+  background: linear-gradient(135deg, rgba(139, 195, 74, ${props => 0.1 + props.index * 0.03}), rgba(139, 195, 74, ${props => 0.15 + props.index * 0.03}));
   border-radius: 15px;
-  padding: 20px;
+  padding: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(139, 195, 74, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  
+  &:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const StatInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+  flex: 1;
 `;
 
 const StatIcon = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 `;
 
-const StatText = styled.div``;
+const StatText = styled.div`
+  flex: 1;
+`;
 
 const StatTitle = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #333;
   margin-bottom: 5px;
+  font-weight: 600;
 `;
 
 const StatDescription = styled.p`
   color: #666;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.4;
 `;
 
 const StatValue = styled.span`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #4CAF50;
+  margin-left: 20px;
+  white-space: nowrap;
 `;
+
+
+
+
+// const ImpactSection = styled.div`
+//   background-image: url(${transformingagriculturebackground});
+//   background-size: cover;
+//   background-position: center;
+//   padding: 60px 0;
+//   position: relative;
+  
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85));
+//   }
+// `;
+
+// const ImpactContent = styled.div`
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 0 20px;
+//   position: relative;
+//   z-index: 1;
+// `;
+
+// const ImpactTitle = styled.h2`
+//   text-align: center;
+//   font-size: 2.5rem;
+//   color: #FFFFFF;
+//   margin-bottom: 15px;
+//   font-weight: bold;
+// `;
+
+// const ImpactSubtitle = styled.p`
+//   text-align: center;
+//   color: rgba(255, 255, 255, 0.8);
+//   margin-bottom: 40px;
+//   max-width: 800px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   font-size: 1.1rem;
+//   line-height: 1.6;
+// `;
+
+// const StatsCard = styled.div`
+//   background: ${props => props.index % 2 === 0 
+//     ? 'linear-gradient(135deg, rgba(139, 195, 74, 0.15), rgba(139, 195, 74, 0.25))'
+//     : 'linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(76, 175, 80, 0.25))'};
+//   backdrop-filter: blur(10px);
+//   border-radius: 15px;
+//   padding: 25px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   margin-bottom: 20px;
+//   border: 1px solid rgba(255, 255, 255, 0.1);
+//   transition: all 0.3s ease;
+  
+//   &:hover {
+//     transform: translateX(10px);
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+//   }
+// `;
+
+// const StatInfo = styled.div`
+//   display: flex;
+//   align-items: center;
+//   gap: 20px;
+// `;
+
+// const StatIcon = styled.img`
+//   width: 40px;
+//   height: 40px;
+//   filter: brightness(0) invert(1);
+// `;
+
+// const StatText = styled.div`
+//   flex: 1;
+// `;
+
+// const StatTitle = styled.h3`
+//   font-size: 1.25rem;
+//   color: #FFFFFF;
+//   margin-bottom: 5px;
+//   font-weight: 600;
+// `;
+
+// const StatDescription = styled.p`
+//   color: rgba(255, 255, 255, 0.7);
+//   font-size: 1rem;
+//   line-height: 1.4;
+// `;
+
+// const StatValue = styled.span`
+//   font-size: 2.5rem;
+//   font-weight: bold;
+//   background: linear-gradient(135deg, #8BC34A, #4CAF50);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   margin-left: 20px;
+//   white-space: nowrap;
+// `;
 const WorksSection = styled.div`
   background-color: rgba(220, 237, 200, 0.3);
   padding: 80px 0;
@@ -369,29 +494,30 @@ const HomeTwo = () => {
       </WorksContent>
     </WorksSection>
 
+    <ImpactSection>
+    <ImpactContent>
+      <ImpactTitle>Transforming Agriculture, One Spray At A Time.</ImpactTitle>
+      <ImpactSubtitle>
+        C.H.I.R.A.G. CONNECT™ is redefining agricultural services with measurable results that
+        benefit farmers, vendors, and the environment.
+      </ImpactSubtitle>
+      
+      {impactStats.map((stat, index) => (
+        <StatsCard key={index} index={index}>
+          <StatInfo>
+            <StatIcon src={stat.icon} alt={stat.title} />
+            <StatText>
+              <StatTitle>{stat.title}</StatTitle>
+              <StatDescription>{stat.description}</StatDescription>
+            </StatText>
+          </StatInfo>
+          <StatValue>{stat.value}</StatValue>
+        </StatsCard>
+      ))}
+    </ImpactContent>
+  </ImpactSection>
 
-      <ImpactSection>
-        <ImpactContent>
-          <ImpactTitle>Transforming Agriculture, One Spray At A Time.</ImpactTitle>
-          <ImpactSubtitle>
-            C.H.I.R.A.G. CONNECT™ is redefining agricultural services with measurable results that
-            benefit farmers, vendors, and the environment.
-          </ImpactSubtitle>
-          
-          {impactStats.map((stat, index) => (
-            <StatsCard key={index} index={index}>
-              <StatInfo>
-                <StatIcon src={stat.icon} alt={stat.title} />
-                <StatText>
-                  <StatTitle>{stat.title}</StatTitle>
-                  <StatDescription>{stat.description}</StatDescription>
-                </StatText>
-              </StatInfo>
-              <StatValue>{stat.value}</StatValue>
-            </StatsCard>
-          ))}
-        </ImpactContent>
-      </ImpactSection>
+
     </Container>
   );
 };
