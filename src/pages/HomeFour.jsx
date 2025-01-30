@@ -172,36 +172,12 @@ const PartnerCard = styled(motion.div)`
     object-fit: contain;
   }
 `;
-// const Container = styled.div`
-//   width: 100%;
-//   background: white;
-// `;
-
-// FAQ Section Styles
 const FAQSection = styled.section`
   max-width: 1280px;
   margin: 0 auto;
   padding: 4rem 1rem;
   text-align: center;
 `;
-
-// const Title = styled.h2`
-//   font-size: 2.5rem;
-//   font-weight: 700;
-//   color: #1a1a1a;
-//   margin-bottom: 1rem;
-// `;
-
-// const GreenBadge = styled.div`
-//   background: #dcfce7;
-//   display: inline-block;
-//   padding: 0.75rem 2rem;
-//   border-radius: 9999px;
-//   color: #166534;
-//   font-size: 1rem;
-//   margin-bottom: 3rem;
-// `;
-
 const FAQContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;

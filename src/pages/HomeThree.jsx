@@ -128,13 +128,6 @@ const PaginationDot = styled.div`
   cursor: pointer;
 `;
 
-// const CropTypesGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//   gap: 30px;
-//   margin-bottom: 80px;
-// `;
-
 const SliderContainer = styled.div`
   width: 100%;
   position: relative;
@@ -208,8 +201,6 @@ const Dot = styled.div`
   cursor: pointer;
 `;
 
-
-
 const TestimonialsSection = styled.section`
   padding: 60px 0;
   max-width: 1200px;
@@ -229,18 +220,39 @@ const TestimonialsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   padding: 0 20px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const TestimonialCard = styled.div`
   border-radius: 12px;
   overflow: hidden;
   background: #F8FFF8;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 const ImageContainer = styled.div`
   width: 100%;
   height: 240px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
 `;
 
 const Image = styled.img`
@@ -251,6 +263,9 @@ const Image = styled.img`
 
 const Content = styled.div`
   padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const TestimonialText = styled.p`
@@ -258,6 +273,7 @@ const TestimonialText = styled.p`
   line-height: 1.6;
   color: #000;
   margin-bottom: 20px;
+  flex: 1;
 `;
 
 const StarRating = styled.div`
@@ -299,6 +315,7 @@ const CropInfo = styled.p`
   font-size: 14px;
   color: #333;
 `;
+
 const HomeThree = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const sliderRef = useRef(null);

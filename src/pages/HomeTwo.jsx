@@ -516,8 +516,6 @@ const HomeTwo = () => {
       ))}
     </ImpactContent>
   </ImpactSection>
-
-
     </Container>
   );
 };
