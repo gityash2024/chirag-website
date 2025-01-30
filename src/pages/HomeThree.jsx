@@ -32,7 +32,7 @@ const Section = styled.section`
 const SectionTitle = styled.h2`
   text-align: center;
   font-size: 2rem;
-  color: #333;
+  color: #333;  
   font-weight: bold;
   margin-bottom: ${props => props.hasSubtitle ? '15px' : '50px'};
 `;

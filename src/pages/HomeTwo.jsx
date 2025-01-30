@@ -20,16 +20,26 @@ const Container = styled.div`
   width: 100%;
   overflow: hidden;
 `;
+
 const WorksTitle = styled.h2`
   text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 50px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
 `;
+
 const Column = styled.div`
   flex: 1;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
+
 const ImpactSection = styled.div`
   background-image: url(${transformingagriculturebackground});
   background-size: cover;
@@ -46,6 +56,10 @@ const ImpactSection = styled.div`
     bottom: 0;
     background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.92));
   }
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
 `;
 
 const ImpactContent = styled.div`
@@ -54,6 +68,10 @@ const ImpactContent = styled.div`
   padding: 0 20px;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
 `;
 
 const ImpactTitle = styled.h2`
@@ -62,6 +80,11 @@ const ImpactTitle = styled.h2`
   color: #333;
   margin-bottom: 15px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
 `;
 
 const ImpactSubtitle = styled.p`
@@ -73,6 +96,11 @@ const ImpactSubtitle = styled.p`
   margin-right: auto;
   font-size: 1.1rem;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
 `;
 
 const StatsCard = styled.div`
@@ -91,6 +119,12 @@ const StatsCard = styled.div`
     transform: translateX(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
 `;
 
 const StatInfo = styled.div`
@@ -98,6 +132,11 @@ const StatInfo = styled.div`
   align-items: center;
   gap: 20px;
   flex: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
 `;
 
 const StatIcon = styled.img`
@@ -107,6 +146,10 @@ const StatIcon = styled.img`
 
 const StatText = styled.div`
   flex: 1;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const StatTitle = styled.h3`
@@ -114,12 +157,20 @@ const StatTitle = styled.h3`
   color: #333;
   margin-bottom: 5px;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const StatDescription = styled.p`
   color: #666;
   font-size: 1rem;
   line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const StatValue = styled.span`
@@ -128,120 +179,24 @@ const StatValue = styled.span`
   color: #4CAF50;
   margin-left: 20px;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-left: 0;
+  }
 `;
 
-
-
-
-// const ImpactSection = styled.div`
-//   background-image: url(${transformingagriculturebackground});
-//   background-size: cover;
-//   background-position: center;
-//   padding: 60px 0;
-//   position: relative;
-  
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85));
-//   }
-// `;
-
-// const ImpactContent = styled.div`
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   padding: 0 20px;
-//   position: relative;
-//   z-index: 1;
-// `;
-
-// const ImpactTitle = styled.h2`
-//   text-align: center;
-//   font-size: 2.5rem;
-//   color: #FFFFFF;
-//   margin-bottom: 15px;
-//   font-weight: bold;
-// `;
-
-// const ImpactSubtitle = styled.p`
-//   text-align: center;
-//   color: rgba(255, 255, 255, 0.8);
-//   margin-bottom: 40px;
-//   max-width: 800px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   font-size: 1.1rem;
-//   line-height: 1.6;
-// `;
-
-// const StatsCard = styled.div`
-//   background: ${props => props.index % 2 === 0 
-//     ? 'linear-gradient(135deg, rgba(139, 195, 74, 0.15), rgba(139, 195, 74, 0.25))'
-//     : 'linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(76, 175, 80, 0.25))'};
-//   backdrop-filter: blur(10px);
-//   border-radius: 15px;
-//   padding: 25px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   margin-bottom: 20px;
-//   border: 1px solid rgba(255, 255, 255, 0.1);
-//   transition: all 0.3s ease;
-  
-//   &:hover {
-//     transform: translateX(10px);
-//     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-//   }
-// `;
-
-// const StatInfo = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: 20px;
-// `;
-
-// const StatIcon = styled.img`
-//   width: 40px;
-//   height: 40px;
-//   filter: brightness(0) invert(1);
-// `;
-
-// const StatText = styled.div`
-//   flex: 1;
-// `;
-
-// const StatTitle = styled.h3`
-//   font-size: 1.25rem;
-//   color: #FFFFFF;
-//   margin-bottom: 5px;
-//   font-weight: 600;
-// `;
-
-// const StatDescription = styled.p`
-//   color: rgba(255, 255, 255, 0.7);
-//   font-size: 1rem;
-//   line-height: 1.4;
-// `;
-
-// const StatValue = styled.span`
-//   font-size: 2.5rem;
-//   font-weight: bold;
-//   background: linear-gradient(135deg, #8BC34A, #4CAF50);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   margin-left: 20px;
-//   white-space: nowrap;
-// `;
 const WorksSection = styled.div`
   background-color: rgba(220, 237, 200, 0.3);
   padding: 80px 0;
   border-radius: 300px 300px 0 0;
   margin-top: 40px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+    border-radius: 150px 150px 0 0;
+  }
 `;
 
 const SliderContainer = styled.div`
@@ -249,7 +204,12 @@ const SliderContainer = styled.div`
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
+
 const StepIndicators = styled.div`
   display: flex;
   justify-content: center;
@@ -278,6 +238,12 @@ const CategoryTitle = styled.h3`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (max-width: 768px) {
+    padding: 12px 30px;
+    font-size: 1rem;
+    width: 90%;
+  }
 `;
 
 const WorksContent = styled.div`
@@ -290,8 +256,11 @@ const WorksContent = styled.div`
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 40px;
   }
 `;
+
 const Slide = styled.div`
   background: white;
   border-radius: 20px;
@@ -303,12 +272,21 @@ const Slide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: 350px;
+    padding: 20px;
+  }
 `;
 
 const StepNumber = styled.div`
   font-size: 1.1rem;
   color: #333;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const StepTitle = styled.h4`
@@ -316,6 +294,11 @@ const StepTitle = styled.h4`
   color: #333;
   margin-bottom: 30px;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 `;
 
 const StepImage = styled.img`
@@ -323,6 +306,11 @@ const StepImage = styled.img`
   height: 200px;
   margin-top: auto;
   object-fit: contain;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const NavigationButton = styled.button`
@@ -359,7 +347,26 @@ const NavigationButton = styled.button`
     height: 24px;
     stroke-width: 2;
   }
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    
+    &.prev {
+      left: -10px;
+    }
+    
+    &.next {
+      right: -10px;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
+
 const HomeTwo = () => {
     const [farmerCurrentStep, setFarmerCurrentStep] = useState(0);
     const [droneCurrentStep, setDroneCurrentStep] = useState(0);

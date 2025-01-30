@@ -20,12 +20,15 @@ import recognition_2 from "../assets/recognition_2.png";
 import AboutTwo from "../pages/AboutTwo";
 
 
-
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
   height: 80vh;
   overflow: hidden;
+  
+  @media (max-width: 768px) {
+    height: 60vh;
+  }
 `;
 
 const BackgroundImage = styled.div`
@@ -45,6 +48,10 @@ const TransformSection = styled.section`
   max-width: 1280px;
   margin: 0 auto;
   padding: 4rem 1rem;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const TransformContent = styled.div`
@@ -65,68 +72,22 @@ const TextContent = styled.div`
     font-weight: bold;
     margin-bottom: 1rem;
     line-height: 1.2;
+    
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
   }
 
   p {
     font-size: 18px;
     color: #666;
     margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
-
-// const SliderContainer = styled.div`
-//   position: relative;
-//   background: #f8f9fa;
-//   border-radius: 20px;
-//   padding: 1.5rem;
-//   overflow: hidden;
-// `;
-
-// const SlideImage = styled(motion.img)`
-//   width: 100%;
-//   height: 300px;
-//   object-fit: cover;
-//   border-radius: 10px;
-// `;
-
-// const SliderButton = styled.button`
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: white;
-//   border: 1px solid #e5e7eb;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   cursor: pointer;
-//   z-index: 2;
-//   transition: all 0.3s ease;
-
-//   &:hover {
-//     background: #f3f4f6;
-//   }
-
-//   &:disabled {
-//     opacity: 0.5;
-//     cursor: not-allowed;
-//   }
-
-//   &.prev {
-//     left: 1rem;
-//   }
-
-//   &.next {
-//     right: 1rem;
-//   }
-// `;
-// const Section = styled.section`
-//   padding: 80px 0;
-//   max-width: 1280px;
-//   margin: 0 auto;
-// `;
 
 const TopCard = styled.div`
   display: grid;
@@ -138,6 +99,7 @@ const TopCard = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 40px;
   }
 `;
 
@@ -158,12 +120,20 @@ const ContentContainer = styled.div`
     font-weight: bold;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   p {
     font-size: 18px;
     color: #4b5563;
     line-height: 1.6;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -175,6 +145,10 @@ const BottomSection = styled.div`
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   p {
@@ -182,6 +156,11 @@ const BottomSection = styled.div`
     color: #4b5563;
     max-width: 800px;
     margin: 0 auto 3rem;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 2rem;
+    }
   }
 `;
 
@@ -212,6 +191,10 @@ const FeatureList = styled.div`
     font-size: 18px;
     color: #1a1a1a;
 
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
     &:before {
       content: "✓";
       color: #16a34a;
@@ -241,17 +224,12 @@ const FeatureImage = styled.div`
     color: white;
     padding: 1rem;
     font-size: 16px;
+    
+    @media (max-width: 768px) {
+      font-size: 14px;
+      padding: 0.75rem;
+    }
   }
-`;
-const Section = styled.section`
-  padding: 60px 0;
-  background: #fafafa;
-`;
-
-const Container = styled.div`
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
 `;
 
 const Header = styled.div`
@@ -262,11 +240,19 @@ const Header = styled.div`
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 16px;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   p {
     color: #666;
     font-size: 18px;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -275,6 +261,10 @@ const SliderContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 0;
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+  }
 `;
 
 const SlideWrapper = styled.div`
@@ -284,6 +274,10 @@ const SlideWrapper = styled.div`
   padding: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 const SlideImage = styled(motion.img)`
@@ -309,6 +303,11 @@ const SliderButton = styled.button`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+
   &:hover {
     background: #f8f9fa;
     transform: translateY(-50%) scale(1.1);
@@ -321,22 +320,39 @@ const SliderButton = styled.button`
 
   &.prev {
     left: -20px;
+    @media (max-width: 768px) {
+      left: -10px;
+    }
   }
 
   &.next {
     right: -20px;
+    @media (max-width: 768px) {
+      right: -10px;
+    }
   }
 `;
+
 const SlidesWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 `;
+
 const SlideItem = styled(motion.div)`
   background: white;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
   
   img {
     width: 100%;
@@ -347,7 +363,6 @@ const SlideItem = styled(motion.div)`
     display: block;
   }
 `;
-
 const HeroWithSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentPair, setCurrentPair] = useState(0);

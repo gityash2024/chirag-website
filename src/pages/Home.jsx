@@ -30,13 +30,17 @@ const Container = styled.div`
 
 const HeroSection = styled.section`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(${chiragbackgroundimage});
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 0 5%;
+  padding: 20px 5%;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
 `;
 
 const ContentCard = styled.div`
@@ -45,11 +49,20 @@ const ContentCard = styled.div`
   border-radius: 15px;
   max-width: 450px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
 `;
 
 const Logo = styled.img`
   height: 40px;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    height: 32px;
+  }
 `;
 
 const Title = styled.h1`
@@ -60,6 +73,12 @@ const Title = styled.h1`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const TechnologyIcon = styled.img`
@@ -88,6 +107,11 @@ const ContactButton = styled.button`
   font-size: 0.95rem;
   &:hover {
     background-color: #2c2c2c;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
   }
 `;
 
@@ -120,6 +144,10 @@ const StatLabel = styled.span`
 const FeaturesSection = styled.section`
   padding: 4rem 5%;
   background-color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 2rem 20px;
+  }
 `;
 
 const FeatureTitle = styled.h2`
@@ -128,6 +156,10 @@ const FeatureTitle = styled.h2`
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const StandOutButton = styled.button`
@@ -154,12 +186,21 @@ const SectionTitle = styled.h3`
   font-weight: 600;
   margin-bottom: 2rem;
   color: #1a1a1a;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const FeaturesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
 
 const FarmerImage = styled.img`
@@ -182,6 +223,12 @@ const FeatureHeader = styled.div`
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 const FeatureIcon = styled.img`
@@ -200,6 +247,11 @@ const AdditionalFeaturesGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
 
 const DroneServiceSection = styled.div`
@@ -215,7 +267,7 @@ const DroneImage = styled.img`
 `;
 
 const Home = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const stats = [
     { value: "25%", label: "Increase in crop yield" },
     { value: "1000+", label: "successful service bookings completed" },
@@ -360,9 +412,7 @@ const Home = () => {
       </FeaturesSection>
 
       <HomeTwo />
-
       <HomeThree />
-
       <HomeFour />
     </Container>
   );

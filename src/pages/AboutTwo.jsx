@@ -29,6 +29,9 @@ const Section = styled.section`
   max-width: 1280px;
   margin: 0 auto;
   padding: 4rem 1rem;
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const Grid = styled.div`
@@ -36,9 +39,9 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 `;
 
@@ -46,6 +49,9 @@ const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -53,9 +59,11 @@ const Title = styled.h2`
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.2;
-
   @media (max-width: 768px) {
     font-size: 2rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
   }
 `;
 
@@ -63,15 +71,20 @@ const Subtitle = styled.p`
   color: #666;
   font-size: 1.125rem;
   margin-top: 1rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const PlayStoreButton = styled(motion.div)`
   cursor: pointer;
   width: fit-content;
-  
   img {
     height: 56px;
     width: auto;
+    @media (max-width: 768px) {
+      height: 48px;
+    }
   }
 `;
 
@@ -81,25 +94,30 @@ const AppStats = styled.div`
   gap: 1rem;
   margin-top: 1rem;
   color: #4a5568;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 `;
 
 const Stars = styled.div`
   display: flex;
   color: #fbbf24;
   margin-left: 0.5rem;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 
 const ImageContainer = styled(motion.div)`
   position: relative;
   width: 100%;
-  
   img {
     width: 130%;
     max-width: none;
     height: auto;
     display: block;
     margin-left: -15%;
-
     @media (max-width: 768px) {
       width: 100%;
       margin-left: 0;
@@ -110,6 +128,9 @@ const ImageContainer = styled(motion.div)`
 const PartnersSection = styled.section`
   background: #f9fafb;
   padding: 4rem 0;
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
 `;
 
 const PartnersContainer = styled.div`
@@ -121,6 +142,9 @@ const PartnersContainer = styled.div`
 const PartnersHeader = styled(motion.div)`
   text-align: center;
   margin-bottom: 3rem;
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const PartnersTitle = styled.h2`
@@ -128,6 +152,9 @@ const PartnersTitle = styled.h2`
   font-weight: bold;
   color: #1a1a1a;
   margin-bottom: 1rem;
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
 `;
 
 const GreenBadge = styled.div`
@@ -138,70 +165,22 @@ const GreenBadge = styled.div`
   color: #166534;
   font-size: 1rem;
   margin-bottom: 3rem;
-`;
-
-const PartnersGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 2rem;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  @media (max-width: 768px) {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
   }
 `;
 
-const PartnerCard = styled(motion.div)`
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-`;
-// const Container = styled.div`
-//   width: 100%;
-//   background: white;
-// `;
-
-// FAQ Section Styles
 const FAQSection = styled.section`
   max-width: 1280px;
   margin: 0 auto;
   padding: 4rem 1rem;
   text-align: center;
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
-
-// const Title = styled.h2`
-//   font-size: 2.5rem;
-//   font-weight: 700;
-//   color: #1a1a1a;
-//   margin-bottom: 1rem;
-// `;
-
-// const GreenBadge = styled.div`
-//   background: #dcfce7;
-//   display: inline-block;
-//   padding: 0.75rem 2rem;
-//   border-radius: 9999px;
-//   color: #166534;
-//   font-size: 1rem;
-//   margin-bottom: 3rem;
-// `;
 
 const FAQContainer = styled.div`
   max-width: 900px;
@@ -222,6 +201,9 @@ const FAQHeader = styled.div`
   align-items: center;
   cursor: pointer;
   background: white;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const Question = styled.h3`
@@ -229,6 +211,9 @@ const Question = styled.h3`
   color: #1a1a1a;
   font-weight: 500;
   text-align: left;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Answer = styled(motion.div)`
@@ -236,6 +221,9 @@ const Answer = styled(motion.div)`
   color: #4b5563;
   text-align: left;
   line-height: 1.6;
+  @media (max-width: 768px) {
+    padding: 0 1rem 1rem;
+  }
 `;
 
 const LoadMoreButton = styled.button`
@@ -250,13 +238,14 @@ const LoadMoreButton = styled.button`
   margin: 2rem auto 0;
   cursor: pointer;
   transition: all 0.3s ease;
-
   &:hover {
     background: #2d2d2d;
   }
+  @media (max-width: 768px) {
+    padding: 0.5rem 1.5rem;
+  }
 `;
 
-// Contact Section Styles
 const ContactSection = styled.section`
   position: relative;
   background-image: url(${contactusbackgroundimage});
@@ -268,6 +257,11 @@ const ContactSection = styled.section`
   align-items: center;
   min-height: 600px;
   border-radius: 40px;
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    min-height: auto;
+  }
 `;
 
 const ContactCard = styled.div`
@@ -277,15 +271,18 @@ const ContactCard = styled.div`
   width: 100%;
   max-width: 800px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
 
 const ContactGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
@@ -296,7 +293,6 @@ const ContactInfo = styled.div`
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-
   p {
     margin-bottom: 1.5rem;
   }
@@ -314,7 +310,6 @@ const Input = styled.input`
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   font-size: 1rem;
-
   &:focus {
     outline: none;
     border-color: #22c55e;
@@ -328,7 +323,6 @@ const TextArea = styled.textarea`
   border-radius: 6px;
   font-size: 1rem;
   min-height: 120px;
-
   &:focus {
     outline: none;
     border-color: #22c55e;
@@ -343,11 +337,12 @@ const SubmitButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-
   &:hover {
     background: #2d2d2d;
   }
 `;
+
+
 const AboutTwo = () => {
   const partners = [
     { id: 1, img: supported_1 },
