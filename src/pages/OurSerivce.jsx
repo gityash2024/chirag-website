@@ -335,8 +335,8 @@ const SliderButton = styled(motion.button)`
 `;
 const HeroSections = styled.section`
   position: relative;
-  width: 100%;  /* Full width */
-  height: 333px; /* Default height */
+  width: 100%;
+  height: 333px;
   overflow: hidden;
   background: linear-gradient(rgba(18, 18, 18, 0.04), rgba(0, 0, 0, 0.3)),
     url(${ourservice}) no-repeat center center;
@@ -344,33 +344,18 @@ const HeroSections = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 100%
-    );
-  }
-
   
   @media (max-width: 768px) {
-    height: 200px; 
+    height: 200px;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
   }
 
   @media (max-width: 480px) {
-    height: 180px; 
+    height: 180px;
+    background-size: 100% 100%;
   }
-`;
-
+    `;
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
