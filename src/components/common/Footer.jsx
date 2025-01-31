@@ -130,7 +130,6 @@ const Footer = () => {
           <FooterSection>
             <LogoSection>
               <LogoSection>
-             <X size={24} />
                 <LogoImage src={chirag_logo} alt="CHIRAG CONNECT" />
               </LogoSection>
             </LogoSection>

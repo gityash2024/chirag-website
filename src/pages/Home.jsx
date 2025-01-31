@@ -219,21 +219,20 @@ const FeatureCard = styled.div`
 `;
 
 const FeatureHeader = styled.div`
-  display: flex;
+ display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-bottom: 1rem;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    flex-direction: row; 
+    align-items: center;
   }
 `;
-
 const FeatureIcon = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 60px;
+  height: 60px;
+ flex-shrink: 0;
 `;
 
 const FeatureDescription = styled.p`
@@ -373,8 +372,8 @@ const Home = () => {
             {farmerFeatures.map((feature, index) => (
               <FeatureCard key={index}>
                 <FeatureHeader>
+                <FeatureTitle>{feature.title}</FeatureTitle>
                   <FeatureIcon src={feature.icon} alt={feature.title} />
-                  <FeatureTitle>{feature.title}</FeatureTitle>
                 </FeatureHeader>
                 <FeatureDescription>{feature.description}</FeatureDescription>
               </FeatureCard>
@@ -386,8 +385,8 @@ const Home = () => {
           {additionalFeatures.map((feature, index) => (
             <FeatureCard key={index}>
               <FeatureHeader>
+              <FeatureTitle>{feature.title}</FeatureTitle>
                 <FeatureIcon src={feature.icon} alt={feature.title} />
-                <FeatureTitle>{feature.title}</FeatureTitle>
               </FeatureHeader>
               <FeatureDescription>{feature.description}</FeatureDescription>
             </FeatureCard>
@@ -401,8 +400,8 @@ const Home = () => {
             {droneFeatures.map((feature, index) => (
               <FeatureCard key={index}>
                 <FeatureHeader>
+                <FeatureTitle>{feature.title}</FeatureTitle>
                   <FeatureIcon src={feature.icon} alt={feature.title} />
-                  <FeatureTitle>{feature.title}</FeatureTitle>
                 </FeatureHeader>
                 <FeatureDescription>{feature.description}</FeatureDescription>
               </FeatureCard>

@@ -27,9 +27,13 @@ const WorksTitle = styled.h2`
   color: #333;
   margin-bottom: 50px;
   font-weight: bold;
+  padding: 0 20px; // Add padding to prevent text cutoff
+  
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem; // Reduced font size
     margin-bottom: 30px;
+    padding: 0 15px;
+    line-height: 1.4; // Better line height for readability
   }
 `;
 
@@ -194,8 +198,9 @@ const WorksSection = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    padding: 40px 0;
-    border-radius: 150px 150px 0 0;
+    padding: 60px 0 40px; // Increased top padding
+    border-radius: 100px 100px 0 0; // Reduced border radius
+    margin-top: 20px;
   }
 `;
 
@@ -240,9 +245,13 @@ const CategoryTitle = styled.h3`
   transform: translateX(-50%);
 
   @media (max-width: 768px) {
-    padding: 12px 30px;
-    font-size: 1rem;
-    width: 90%;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    width: auto;
+    min-width: 200px;
+    max-width: 90%;
+    white-space: normal; // Allow text wrapping
+    line-height: 1.4;
   }
 `;
 
@@ -258,6 +267,11 @@ const WorksContent = styled.div`
     grid-template-columns: 1fr;
     padding: 0 20px;
     gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+    gap: 30px;
   }
 `;
 

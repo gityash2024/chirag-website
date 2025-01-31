@@ -24,13 +24,18 @@ const Container = styled.div`
 
 const HeroSection = styled.div`
   position: relative;
-  min-height: 100vh;
+  height: 90vh;
+  width: 100%;
   background-image: url(${serviceimage});
   background-size: cover;
   background-position: center;
   padding: 2rem;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: 60vh;
+  }
 `;
 const ExploreSection = styled.section`
   max-width: 1280px;
@@ -330,10 +335,10 @@ const SliderButton = styled(motion.button)`
 `;
 const HeroSections = styled.section`
   position: relative;
-  width: 100%;
-  height: 400px;
+  width: 100%;  /* Full width */
+  height: 333px; /* Default height */
   overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background: linear-gradient(rgba(18, 18, 18, 0.04), rgba(0, 0, 0, 0.3)),
     url(${ourservice}) no-repeat center center;
   background-size: cover;
   display: flex;
@@ -352,6 +357,17 @@ const HeroSections = styled.section`
       rgba(0, 0, 0, 0.4) 0%,
       rgba(0, 0, 0, 0.2) 100%
     );
+  }
+
+  
+  @media (max-width: 768px) {
+    height: 200px; 
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (max-width: 480px) {
+    height: 180px; 
   }
 `;
 

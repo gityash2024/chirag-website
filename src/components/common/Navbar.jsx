@@ -10,7 +10,7 @@ const NavbarContainer = styled.div`
   top: 2rem;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.71);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
   padding: 1.5rem;
@@ -77,11 +77,12 @@ const NavLink = styled.a`
   font-size: 0.95rem;
   cursor: pointer;
   position: relative;
-  
+  padding-left: 1.5rem;
+
   &:hover {
     color: #111827;
   }
-  
+
   ${props => props.$isActive && `
     color: #111827;
     font-weight: 500;
@@ -89,7 +90,7 @@ const NavLink = styled.a`
 
   .circle-icon {
     position: absolute;
-    left: ${props => props.$isActive ? '-1rem' : '-1.5rem'};
+    left: ${props => props.$isActive ? '0' : '-0.5rem'};
     opacity: ${props => props.$isActive ? '1' : '0'};
     transition: all 0.3s ease;
   }

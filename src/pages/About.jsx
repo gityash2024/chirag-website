@@ -23,7 +23,7 @@ import AboutTwo from "../pages/AboutTwo";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
   
   @media (max-width: 768px) {
