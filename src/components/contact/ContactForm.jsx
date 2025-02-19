@@ -173,6 +173,13 @@ const ContactForm = () => {
         <Title>Contact Us</Title>
         
         <InfoGrid>
+        <InfoSection>
+            <h4>GET IN TOUCH</h4>
+            <p>+91 7838750472</p> 
+            <h4>OUR ADDRESS</h4>
+            <p>CHIRAG TECHNOLOGIES, Seedpur Khas,<br />
+            Prayagraj, Uttar Pradesh-211012</p>
+          </InfoSection>
           <InfoSection>
             <h4>OFFICE HOURS</h4>
             <p>Monday-Friday<br />9:00 am to 7:00 pm</p>
@@ -180,15 +187,6 @@ const ContactForm = () => {
             <h4>OFFICES</h4>
             <p>IIT Mandi-Ihub and HCI Foundation,<br />
             IIT Mandi, VPO Kamand, Himachal Pradesh-175075</p>
-          </InfoSection>
-
-          <InfoSection>
-            <h4>OUR ADDRESS</h4>
-            <p>CHIRAG TECHNOLOGIES, Seedpur Khas,<br />
-            Prayagraj, Uttar Pradesh-211012</p>
-            
-            <h4>GET IN TOUCH</h4>
-            <p>+91 7838750472</p>
           </InfoSection>
         </InfoGrid>
 

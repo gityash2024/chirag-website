@@ -318,7 +318,7 @@ const StepTitle = styled.h4`
 const StepImage = styled.img`
   width: 200px;
   height: 200px;
-  margin-top: auto;
+  
   object-fit: contain;
 
   @media (max-width: 768px) {

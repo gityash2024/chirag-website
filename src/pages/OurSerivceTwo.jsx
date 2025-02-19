@@ -199,21 +199,21 @@ const OurServiceTwo = () => {
           <h2 style={{ marginBottom: "2rem" }}>Contact Us</h2>
           
           <ContactGrid>
-            <ContactInfo>
-              <h4>OFFICE HOURS</h4>
-              <p>Monday-Friday<br />9:00 am to 7:00 pm</p>
-              
-              <h4>OFFICES</h4>
-              <p>IIT Mandi-Ihub and HCI Foundation,<br />
-              IIT Mandi, VPO Kamand, Himachal Pradesh-175075</p>
-              
-              <h4>OUR ADDRESS</h4>
-              <p>CHIRAG TECHNOLOGIES, Seedpur Khas,<br />
-              Prayagraj, Uttar Pradesh-211012</p>
-              
-              <h4>GET IN TOUCH</h4>
-              <p>+91 7838750472</p>
-            </ContactInfo>
+          <ContactInfo>
+                <h4>GET IN TOUCH</h4>
+                <p>+91 7838750472</p>
+                <h4>OUR ADDRESS</h4>
+                <p>CHIRAG TECHNOLOGIES, Saeedpur Khas,<br />
+                Prayagraj, Uttar Pradesh-211012</p>
+
+                
+                <h4>OFFICE 2</h4>
+                <p>IIT Mandi iHub and HCI Foundation,<br />
+                IIT Mandi, VPO Kamand, Himachal Pradesh-175075</p>
+                <h4>OFFICE HOURS</h4>
+                <p>Monday-Friday<br />8:00 am to 7:00 pm</p>
+                
+              </ContactInfo>
 
             <Form onSubmit={handleSubmit}>
               <Input
