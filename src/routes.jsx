@@ -12,6 +12,7 @@ import AboutTwo from "./pages/AboutTwo";
 import OurSerivceTwo from "./pages/OurSerivceTwo";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermandCondition from "./pages/TermandCondition";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -65,6 +66,7 @@ export const router = createBrowserRouter([
         path: "abouttwo",
         element: <AboutTwo />,
       },
+     
     ],
   },
 ]);

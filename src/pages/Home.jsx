@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { motion, useAnimation, useInView } from "framer-motion";
 import chiraglogo from "../assets/chiraglogo.png";
-import backgroud_1 from "../assets/backgroud_1.png";
-import backgroud_2 from "../assets/backgroud_2.png";
-import backgroud_3 from "../assets/backgroud_3.png";
 import connectingtechnlogy from "../assets/connectingtechnlogy.png";
 import chiragbackgroundimage from "../assets/chiragbackgroundimage.png";
 import farmers from "../assets/farmers.png";
@@ -150,15 +148,109 @@ const FeaturesSection = styled.section`
   }
 `;
 
-const FeatureTitle = styled.h2`
-  text-align: center;
-  font-size: 2rem;
+const sectionVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1, 
+    transition: { 
+      duration: 0.6,
+      when: "beforeChildren",
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const featureTitleVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { duration: 0.6 }
+  }
+};
+
+const buttonVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: { 
+    scale: 1, 
+    opacity: 1, 
+    transition: { duration: 0.5 }
+  },
+  hover: {
+    scale: 1.05,
+    backgroundColor: "#c8e6c9",
+    transition: { duration: 0.3 }
+  }
+};
+
+const cardVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { duration: 0.5 }
+  },
+  hover: {
+    y: -10,
+    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+    transition: { duration: 0.3 }
+  }
+};
+
+const imageVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: { 
+    scale: 1, 
+    opacity: 1, 
+    transition: { duration: 0.6 }
+  }
+};
+
+const MotionFeatureTitle = motion.h2;
+const MotionStandOutButton = motion.button;
+const MotionFeatureCard = motion(styled(motion.div)`
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+`);
+
+const MotionFarmerImage = motion(styled(motion.img)`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+`);
+
+const MotionDroneImage = motion(styled(motion.img)`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+`);
+
+const MotionSectionTitle = motion.h3;
+
+const SectionTitle = styled.h3`
+  font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 2rem;
   color: #1a1a1a;
-  margin-bottom: 1rem;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+`;
+
+const FeatureTitle = styled.h2`
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -181,17 +273,6 @@ const FarmerSection = styled.div`
   margin-bottom: 3rem;
 `;
 
-const SectionTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #1a1a1a;
-
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-  }
-`;
-
 const FeaturesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,23 +284,8 @@ const FeaturesGrid = styled.div`
   }
 `;
 
-const FarmerImage = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-`;
-
-const FeatureCard = styled.div`
-  background-color: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
-`;
-
 const FeatureHeader = styled.div`
- display: flex;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
@@ -229,10 +295,11 @@ const FeatureHeader = styled.div`
     align-items: center;
   }
 `;
+
 const FeatureIcon = styled.img`
   width: 60px;
   height: 60px;
- flex-shrink: 0;
+  flex-shrink: 0;
 `;
 
 const FeatureDescription = styled.p`
@@ -253,17 +320,25 @@ const AdditionalFeaturesGrid = styled.div`
   }
 `;
 
-const DroneServiceSection = styled.div`
+const MotionDroneServiceSection = motion(styled.div`
   margin-bottom: 3rem;
-`;
+`);
 
-const DroneImage = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-`;
+const useScrollAnimation = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false, threshold: 0.2 });
+  
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+  
+  return { ref, controls, inView };
+};
 
 const Home = () => {
   const navigate = useNavigate();
@@ -332,6 +407,9 @@ const Home = () => {
     }
   ];
 
+  const whyChooseSectionAnimation = useScrollAnimation();
+  const droneServiceSectionAnimation = useScrollAnimation();
+
   return (
     <Container>
       <HeroSection>
@@ -362,52 +440,123 @@ const Home = () => {
       </HeroSection>
 
       <FeaturesSection>
-        <FeatureTitle>Why Choose C.H.I.R.A.G CONNECT?</FeatureTitle>
-        <StandOutButton>See What Makes Us Stand Out</StandOutButton>
+        <motion.div
+          ref={whyChooseSectionAnimation.ref}
+          initial="hidden"
+          animate={whyChooseSectionAnimation.controls}
+          variants={sectionVariants}
+        >
+          <MotionFeatureTitle 
+            variants={featureTitleVariants}
+            style={{ 
+              textAlign: "center",
+              fontSize: "2rem",
+              fontWeight: 600,
+              color: "#1a1a1a",
+              marginBottom: "1rem"
+            }}
+          >
+            Why Choose C.H.I.R.A.G CONNECT?
+          </MotionFeatureTitle>
+          
+          <MotionStandOutButton
+            variants={buttonVariants}
+            whileHover="hover"
+            style={{
+              display: "block",
+              margin: "0 auto 3rem",
+              padding: "0.5rem 1.5rem",
+              backgroundColor: "#e8f5e9",
+              color: "#2e7d32",
+              border: "none",
+              borderRadius: "20px",
+              fontSize: "0.9rem",
+              cursor: "pointer"
+            }}
+          >
+            See What Makes Us Stand Out
+          </MotionStandOutButton>
 
-        <FarmerSection>
-          <SectionTitle>For Farmers</SectionTitle>
-          <FeaturesGrid>
-            <FarmerImage src={farmers} alt="Farmer" />
-            {farmerFeatures.map((feature, index) => (
-              <FeatureCard key={index}>
+          <FarmerSection>
+            <SectionTitle>For Farmers</SectionTitle>
+            <FeaturesGrid>
+              <MotionFarmerImage 
+                src={farmers} 
+                alt="Farmer" 
+                variants={imageVariants}
+              />
+              {farmerFeatures.map((feature, index) => (
+                <MotionFeatureCard 
+                  key={index}
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  <FeatureHeader>
+                    <FeatureTitle>{feature.title}</FeatureTitle>
+                    <FeatureIcon src={feature.icon} alt={feature.title} />
+                  </FeatureHeader>
+                  <FeatureDescription>{feature.description}</FeatureDescription>
+                </MotionFeatureCard>
+              ))}
+            </FeaturesGrid>
+          </FarmerSection>
+
+          <AdditionalFeaturesGrid>
+            {additionalFeatures.map((feature, index) => (
+              <MotionFeatureCard 
+                key={index}
+                variants={cardVariants}
+                whileHover="hover"
+              >
                 <FeatureHeader>
-                <FeatureTitle>{feature.title}</FeatureTitle>
+                  <FeatureTitle>{feature.title}</FeatureTitle>
                   <FeatureIcon src={feature.icon} alt={feature.title} />
                 </FeatureHeader>
                 <FeatureDescription>{feature.description}</FeatureDescription>
-              </FeatureCard>
+              </MotionFeatureCard>
             ))}
-          </FeaturesGrid>
-        </FarmerSection>
+          </AdditionalFeaturesGrid>
+        </motion.div>
 
-        <AdditionalFeaturesGrid>
-          {additionalFeatures.map((feature, index) => (
-            <FeatureCard key={index}>
-              <FeatureHeader>
-              <FeatureTitle>{feature.title}</FeatureTitle>
-                <FeatureIcon src={feature.icon} alt={feature.title} />
-              </FeatureHeader>
-              <FeatureDescription>{feature.description}</FeatureDescription>
-            </FeatureCard>
-          ))}
-        </AdditionalFeaturesGrid>
-
-        <DroneServiceSection>
-          <SectionTitle>For Drone Service <br /> Providers</SectionTitle>
+        <MotionDroneServiceSection
+          ref={droneServiceSectionAnimation.ref}
+          initial="hidden"
+          animate={droneServiceSectionAnimation.controls}
+          variants={sectionVariants}
+        >
+          <MotionSectionTitle
+            variants={featureTitleVariants}
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: 600,
+              marginBottom: "2rem",
+              color: "#1a1a1a"
+            }}
+          >
+            For Drone Service <br /> Providers
+          </MotionSectionTitle>
+          
           <FeaturesGrid>
-            <DroneImage src={drop} alt="Drone Service" />
+            <MotionDroneImage 
+              src={drop} 
+              alt="Drone Service" 
+              variants={imageVariants}
+            />
             {droneFeatures.map((feature, index) => (
-              <FeatureCard key={index}>
+              <MotionFeatureCard 
+                key={index}
+                variants={cardVariants}
+                whileHover="hover"
+              >
                 <FeatureHeader>
-                <FeatureTitle>{feature.title}</FeatureTitle>
+                  <FeatureTitle>{feature.title}</FeatureTitle>
                   <FeatureIcon src={feature.icon} alt={feature.title} />
                 </FeatureHeader>
                 <FeatureDescription>{feature.description}</FeatureDescription>
-              </FeatureCard>
+              </MotionFeatureCard>
             ))}
           </FeaturesGrid>
-        </DroneServiceSection>
+        </MotionDroneServiceSection>
       </FeaturesSection>
 
       <HomeTwo />
