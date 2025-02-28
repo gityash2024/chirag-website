@@ -13,6 +13,7 @@ import OurSerivceTwo from "./pages/OurSerivceTwo";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermandCondition from "./pages/TermandCondition";
 import PricingAndPolicies from "./pages/PricingAndPolicies";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +71,7 @@ export const router = createBrowserRouter([
         path: "pricingandpolicies",
         element: <PricingAndPolicies />,
       },
+     
     ],
   },
 ]);
