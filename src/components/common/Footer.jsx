@@ -141,8 +141,10 @@ const Footer = () => {
               <li><a onClick={() => navigate("/about")}>About Us</a></li>
               <li><a onClick={() => navigate("/terms")}>Terms & Conditions</a></li>
               <li><a onClick={() => navigate("/privacy")}>Privacy Policy</a></li>
+              <li><a onClick={() => navigate("/pricingandpolicies")}>Pricing & Policies</a></li>
               <li><a onClick={() => navigate("/")}>CC Impact</a></li>
               <li><a onClick={() => navigate("/")}>Careers</a></li>
+              
             </ul>
           </FooterSection>
 
