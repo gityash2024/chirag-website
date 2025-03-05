@@ -103,7 +103,7 @@ const PricingAndPolicies = () => {
             </tr>
           </tbody>
         </Table>
-        <ListItem><strong>AOV Range for Services:</strong> ₹750₹3,000 per booking.</ListItem>
+        <ListItem><strong>AOV Range for Services:</strong> ₹750 - ₹3,000 per booking.</ListItem>
         <ListItem><strong>Average AOV Across Services:</strong> 1,500 per booking.</ListItem>
       </Section>
 
@@ -121,8 +121,22 @@ const PricingAndPolicies = () => {
         <Heading>2.Refund Policy & Timeline</Heading>
         <List>
           <ListItem><strong>Refund Eligibility:</strong> Refunds are applicable only if the vendor cancels before execution.</ListItem>
-          <ListItem><strong>Processing Time:</strong> Refunds (after deducting PG fees) are processed within 5-7 working days.</ListItem>
+          <ListItem><strong>Processing Time:</strong>Refunds will be credited back to the original payment method in 7-15 business days.</ListItem>
           <ListItem><strong>Non-Refundable Cases:</strong> If a service has been executed or partially completed, refunds are not applicable.</ListItem>
+        </List>
+      </Section>
+      
+ 
+
+
+ 
+      <Section>
+        <Heading>3.Payment Gateway Information</Heading>
+        <List>
+          <ListItem><strong>Payment Solution:</strong>We use Cashfree as our trusted payment gateway partner.</ListItem>
+          <ListItem><strong>Transaction Security:</strong> All payments are securely processed with industry-standard encryption.</ListItem>
+          <ListItem><strong>Payment Methods:</strong> Support for UPI, credit/debit cards, net banking, and wallet payments.</ListItem>
+          <ListItem><strong>Settlement Timeline:</strong>Vendors receive payments typically within 24-48 hours after successful transaction.</ListItem>
         </List>
       </Section>
     </Container>

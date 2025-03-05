@@ -138,12 +138,10 @@ const Footer = () => {
           <FooterSection>
             <h3>Company</h3>
             <ul>
-              <li><a onClick={() => navigate("/about")}>About Us</a></li>
-              <li><a onClick={() => navigate("/terms")}>Terms & Conditions</a></li>
-              <li><a onClick={() => navigate("/privacy")}>Privacy Policy</a></li>
-              <li><a onClick={() => navigate("/pricingandpolicies")}>Pricing & Policies</a></li>
-              <li><a onClick={() => navigate("/")}>CC Impact</a></li>
-              <li><a onClick={() => navigate("/")}>Careers</a></li>
+              <li><a style={{cursor:"pointer"}} onClick={() => navigate("/about")}>About Us</a></li>
+              <li><a style={{cursor:"pointer"}} onClick={() => navigate("/terms")}>Terms & Conditions</a></li>
+              <li><a style={{cursor:"pointer"}} onClick={() => navigate("/privacy")}>Privacy Policy</a></li>
+              <li><a style={{cursor:"pointer"}} onClick={() => navigate("/pricingandpolicies")}>Pricing & Policies</a></li>
               
             </ul>
           </FooterSection>
@@ -151,30 +149,36 @@ const Footer = () => {
           <FooterSection>
             <h3>For Farmers</h3>
             <ul>
-              <li><a onClick={() => navigate("/")}>CC Testimonials</a></li>
-              <li><a onClick={() => navigate("/")}>Download Farmer App</a></li>
-              <li><a onClick={() => navigate("/contact")}>Contact Us</a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.yash091099.ChiragFarmersApp&hl=en_IN" target="_blank">Download Farmer App</a></li>
+              <li><a style={{cursor:"pointer"}} onClick={() => navigate("/contact")}>Contact Us</a></li>
             </ul>
           </FooterSection>
 
           <FooterSection>
             <h3>For Vendors</h3>
             <ul>
-              <li><a onClick={() => navigate("/")}>Register as CC Vendor</a></li>
+              <li><a href='https://chiragvendor.com/register'  target="_blank" >Register as CC Vendor</a></li>
             </ul>
           </FooterSection>
 
           <SocialSection>
             <h3>Social Links</h3>
             <div className="social-icons">
-  <SocialIcon src={facebook} alt="Facebook" />
-  <SocialIcon src={insta} alt="Instagram" />
-  <SocialIcon src={linkedin} alt="LinkedIn" />
-  <SocialIcon src={twitter} alt="Twitter" />
+  <a href="https://www.instagram.com/chiragtech.connect?utm_source=qr&igsh=MXBlcHE0dmUwMjMzaA==" target="_blank" rel="noopener noreferrer">
+    <SocialIcon src={insta} alt="Instagram" />
+  </a>
+  <a href="https://www.linkedin.com/company/chiragtechnologies?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
+    <SocialIcon src={linkedin} alt="LinkedIn" />
+  </a>
 </div>
-            <a onClick={() => navigate("/")} className="playstore-button">
-              <img src={Playstores} alt="Get it on Google Play" />
-            </a>
+<a 
+  href="https://play.google.com/store/apps/developer?id=C.H.I.R.A.G.+Technologies&hl=en_IN" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="playstore-button"
+>
+  <img src={Playstores} alt="Get it on Google Play" />
+</a>
           </SocialSection>
         </FooterContent>
 
@@ -183,7 +187,7 @@ const Footer = () => {
             Copyright © {currentYear} C.H.I.R.A.G Technologies. All Rights Reserved
           </div>
           <div>
-            Web Design by colladome.com
+            Web Design by <a href="https://colladome.com" target='_blank'>colladome.com</a>
           </div>
         </FooterBottom>
       </FooterWrapper>

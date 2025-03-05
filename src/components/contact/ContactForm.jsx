@@ -24,32 +24,26 @@ const Card = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+`;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 1.5rem;
-    border: 2px solid transparent;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2)) border-box;
-    -webkit-mask:
-      linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
-    mask:
-      linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-  }
+const CompanyHeader = styled.div`
+  margin-bottom: 1rem;
+  text-align: center;
+`;
+
+const CompanyName = styled.h1`
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #16a34a;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 `;
 
 const Title = styled.h2`
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  text-align: center;
 `;
 
 const InfoGrid = styled.div`
@@ -98,6 +92,8 @@ const Input = styled.input`
   border-radius: 0.5rem;
   font-size: 0.875rem;
   transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
 
   &:focus {
     outline: none;
@@ -114,12 +110,20 @@ const TextArea = styled.textarea`
   font-size: 0.875rem;
   min-height: 120px;
   transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
 
   &:focus {
     outline: none;
     border-color: #16a34a;
     box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
   }
+`;
+
+const ErrorMessage = styled.span`
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
 `;
 
 const Button = styled.button`
@@ -133,6 +137,8 @@ const Button = styled.button`
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s ease;
+  z-index: 1;
+  position: relative;
 
   &:hover {
     background: #2c2c2c;
@@ -145,23 +151,109 @@ const Button = styled.button`
 `;
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({
     name: "",
     email: "",
     message: ""
   });
   const [isLoading, setIsLoading] = useState(false);
 
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {
+      name: "",
+      email: "",
+      message: ""
+    };
+
+    if (!name.trim()) {
+      newErrors.name = "Name is required";
+      valid = false;
+    } else if (name.trim().length < 3) {
+      newErrors.name = "Name must be at least 3 characters";
+      valid = false;
+    }
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        newErrors.email = "Please enter a valid email address";
+        valid = false;
+      }
+    }
+
+    if (!message.trim()) {
+      newErrors.message = "Message is required";
+      valid = false;
+    } else if (message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+    if (errors.name) {
+      setErrors({...errors, name: ""});
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    if (errors.email) {
+      setErrors({...errors, email: ""});
+    }
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+    if (errors.message) {
+      setErrors({...errors, message: ""});
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsLoading(true);
     
     try {
+      // Form data to be submitted
+      const formData = {
+        name,
+        email,
+        message
+      };
+      
+      // Print form data to console (as requested)
+      console.log("Form submitted with data:", formData);
+      
+      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Show success message
       toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      
+      // Reset form
+      setName("");
+      setEmail("");
+      setMessage("");
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
+      console.error("Form submission error:", error);
     } finally {
       setIsLoading(false);
     }
@@ -170,10 +262,13 @@ const ContactForm = () => {
   return (
     <Container>
       <Card>
+        <CompanyHeader>
+          <CompanyName>SVRC TECHNO INNOVATIONS PRIVATE LIMITED</CompanyName>
+        </CompanyHeader>
         <Title>Contact Us</Title>
         
         <InfoGrid>
-        <InfoSection>
+          <InfoSection>
             <h4>GET IN TOUCH</h4>
             <p>+91 7838750472</p> 
             <h4>OUR ADDRESS</h4>
@@ -183,7 +278,6 @@ const ContactForm = () => {
           <InfoSection>
             <h4>OFFICE HOURS</h4>
             <p>Monday-Friday<br />9:00 am to 7:00 pm</p>
-            
             <h4>OFFICES</h4>
             <p>IIT Mandi-Ihub and HCI Foundation,<br />
             IIT Mandi, VPO Kamand, Himachal Pradesh-175075</p>
@@ -195,29 +289,31 @@ const ContactForm = () => {
             <Input
               type="text"
               placeholder="Enter your full name"
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
-              required
+              value={name}
+              onChange={handleNameChange}
+              autoComplete="name"
             />
+            {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
           </InputGroup>
 
           <InputGroup>
             <Input
               type="email"
               placeholder="Enter your email"
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
-              required
+              value={email}
+              onChange={handleEmailChange}
+              autoComplete="email"
             />
+            {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
           </InputGroup>
 
           <InputGroup>
             <TextArea
               placeholder="Write us your question here..."
-              value={formData.message}
-              onChange={(e) => setFormData({...formData, message: e.target.value})}
-              required
+              value={message}
+              onChange={handleMessageChange}
             />
+            {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
           </InputGroup>
 
           <Button type="submit" disabled={isLoading}>

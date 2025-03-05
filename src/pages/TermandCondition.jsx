@@ -155,9 +155,14 @@ const TermAndCondition = () => {
         <SectionTitle>9. Contact Information</SectionTitle>
         <Content>
           <p>For inquiries about these terms:</p>
-          <p>Email: support@chiragconnect.com</p>
-          <p>Phone: +91 XXX XXX XXXX</p>
-          <p>Address: [Company Address]</p>
+          <p><strong>Email:</strong> privacy@chiragconnect.com</p>
+          <p><strong>Phone:</strong> +91 7838750472</p>
+          <p><strong>Address:</strong> <br/><span>
+          CHIRAG TECHNOLOGIES, i-Hub IIT Mandi & HCI Foundation, VPO Kamand, Himachal Pradesh-175075
+            </span><br/><span>CHIRAG TECHNOLOGIES, Saeedpur Khas, Prayagraj, Uttar Pradesh-211011</span><br/><span>CHIRAG TECHNOLOGIES, AwADH IIT Ropar, Rupnagar, Punjab-140001
+
+</span></p>
+  
         </Content>
       </Section>
     </Container>
